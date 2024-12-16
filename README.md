@@ -78,3 +78,74 @@ Designed as a portable, multi-tasking, and multi-user system.
 
 # Remmote Shell
    
+# Basic Commands 
+ 1. hostname :  Hostname is used to display the system's DNS name, and to display or set its hostname or NIS domain name.
+ 2. pwd(present working directorie) : Print the full filename of the current working directory.
+ 3. id : Print user and group information for each specified USER, or (when USER omitted) for the current user.
+ 4. ls : List information about the FILEs (the current directory by default).Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+        Mandatory arguments to long options are mandatory for short options too.
+        ls -l :
+        ls -h , --human-readable : 
+        ls -a , --all : 
+        ls -R :
+        ls -t : 
+ 5. cd(Change directory)  : home of that user and if that user dont have its home directory then it deny i dont have home.  
+                    cd .  : shows the current directory.   
+                    cd .. : one folder out from the location.        
+ 6. Switches or Subcommands : 
+             a) -h,--help,help : it will give summarised information theoritically of commmands switches.      
+             b) man : man is the system's manual pager.  Each page argument given to man is normally the name of a program, utility or function.  The manual page asso‐
+             ciated with each of these arguments is then found and displayed.  A section, if provided, will direct man to look only in  that  section  of  the
+             manual.The  default  action  is  to search in all of the available sections following a pre-defined order (see DEFAULTS), and to show only the
+             first page found, even if page exists in several sections ( for more practical information of commands switches).                      
+       c) info : it have both practical and theoritical info of commands switches.
+ 7. ifconfig :  Ifconfig is used to configure the kernel-resident network interfaces.  It is used at boot time to set up interfaces as necessary.  After that, it
+               is usually only needed when debugging or when system tuning is needed. If no arguments are given, ifconfig displays the status of the currently active interfaces.  If a single 
+               interface argument is given, it displays the  status  of  the  given interface only; if a single -a argument is given, it displays the status of all interfaces, even those that 
+               are down.       
+           ifconfig -a :  display all interfaces which are currently available, even if down.   
+           ifconfig -s :  display a short list (like netstat -i).     
+           ifconfig -v :  be more verbose for some error conditions.
+  8. touch : create an empty file at the present location, example.
+           [root@localhost Desktop]# touch file.txt
+           [root@localhost Desktop]# ls
+           file.txt
+       -  we can create mutiple files with by space between and there name like this,
+         [root@localhost Desktop]# touch f1.txt f2.txt f3 f4
+         [root@localhost Desktop]# ls
+         f1.txt  f2.txt  f3  f4
+       - and if we want to create a file by name which have space we can by naming it in double,single qoutes (" ") or can use backslash\ before the space like this,
+        double qoutes - [root@localhost Desktop]# touch "varin local"
+                        [root@localhost Desktop]# ls
+                        'varin local'
+        single qoutes - [root@localhost Desktop]# touch 'vc 2'
+                        [root@localhost Desktop]# ls
+                        'vc 2'
+         Backslash - [root@localhost Desktop]# touch vc\ 3
+                     [root@localhost Desktop]# ls
+                      'vc 3'
+9. file : describes the media type of file, example.
+           [root@localhost Desktop]# file file.txt
+           file.txt: empty
+
+10. cat : to read the files we use cat commands and also to write content in the file like this,
+          [root@localhost Desktop]# cat d1
+          [root@localhost Desktop]# cat > d1
+          this is for test purpose.
+          ^C
+          [root@localhost Desktop]# cat d1
+          this is for test purpose.
+11. mkdir : to create a directory we use mkdir command, example.
+            [root@localhost Desktop]# mkdir dir1 dir2 dir3 dir4
+            [root@localhost Desktop]# ls
+            d1  d2  dir1  dir2  dir3  dir4
+            when we have to create directory which'll have sub directories or folder we can create it by using switch -p which look like this,
+           [root@localhost Desktop]# mkdir -p s1/s2/s3/s4
+           [root@localhost Desktop]# ls -R s1/
+           s1/:
+           s2
+           s1/s2:
+           s3
+           s1/s2/s3:
+           s4
+           s1/s2/s3/s4:
