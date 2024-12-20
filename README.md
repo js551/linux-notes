@@ -183,5 +183,13 @@ Designed as a portable, multi-tasking, and multi-user system.
      - Ctrl+X: Exit editor.
      - Ctrl+k: Cut text.
      - Ctrl+U: Paste text.
+-  Cat 
+  - cat is also use as a text editor but it is not use for big files.
+  - this is basically use to read the the content.
+
+# String Processing
+
+- df
+
      
     
