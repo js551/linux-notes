@@ -157,8 +157,13 @@ Designed as a portable, multi-tasking, and multi-user system.
          rm -f : forces the removal of files without prompting for confirmation.
          rm -rf : it use to remove directories and their contents withot any condirmation.
          rm -v : shows details of what is being removed.
+15. Redirecion ( > ) : redirect the output to a file or subfile.
+16. pipe ( | ) : pass the output of one command as input of another command.
+17. echo " ", ' ' : the echo command in Linux is used to display a line of text or a variable's value to the terminal.
 
+    
 # Text Editor
+
 - Linux offers various text editors for editing connfiguration files, writing code, or managing text files. 
 1. Command-line text editors
 
@@ -187,9 +192,28 @@ Designed as a portable, multi-tasking, and multi-user system.
   - cat is also use as a text editor but it is not use for big files.
   - this is basically use to read the the content.
 
+# Compression Tools
+
 # String Processing
 
-- df
-
-     
-    
+1. Sort : The sort command is used to arrange the lines of a text file or input in a specified order, either alphabetically or numerically, ascending or descending.
+ 
+* Common Options:
+  
+    -n : Sort numerically (default is lexicographically).
+  
+    -r : Reverse the sort order (descending).
+  
+    -k : Sort based on a specific field or column.
+  
+    -u : Eliminate duplicate lines.
+  
+    -t : Specify a delimiter (default is whitespace).
+  
+    -f : Ignore case (case-insensitive sorting).
+  
+    -b : Ignore leading blanks.
+  
+    -M : Sort by month names (e.g., "Jan", "Feb", "Mar").
+  
+    -o : Write the sorted output to a file.
