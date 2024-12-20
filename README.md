@@ -80,11 +80,11 @@ Designed as a portable, multi-tasking, and multi-user system.
    
 # Basic Commands 
  1. hostname :  Hostname is used to display the system's DNS name, and to display or set its hostname or NIS domain name.
- 2. pwd(present working directorie) : Print the full filename of the current working directory.
+ 2. pwd (present working directorie) : Print the full filename of the current working directory.
  3. id : Print user and group information for each specified USER, or (when USER omitted) for the current user.
  4. ls : List information about the FILEs (the current directory by default).Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
         Mandatory arguments to long options are mandatory for short options too.
-        ls -l :
+        ls -l : single vertical list.
         ls -h , --human-readable : 
         ls -a , --all : 
         ls -R :
@@ -149,3 +149,39 @@ Designed as a portable, multi-tasking, and multi-user system.
            s1/s2/s3:
            s4
            s1/s2/s3/s4:
+12. rmdir : this is only use to remove the files.
+13.    rm : use to remove the files and directory we use rm command.
+       example :
+            rm : remove file.
+         rm -r : recursively removes a directory and its contents.
+         rm -f : forces the removal of files without prompting for confirmation.
+         rm -rf : it use to remove directories and their contents withot any condirmation.
+         rm -v : shows details of what is being removed.
+
+# Text Editor
+- Linux offers various text editors for editing connfiguration files, writing code, or managing text files. 
+1. Command-line text editors
+
+-  Vi/Vim
+  
+-  Features:
+    - Modes: insert, Command, Visual.
+    - Lightweight, available on almost all Linux systems.
+    - syntax heighlighting and plugin support (Vim).
+-  Basic Commands:
+    - Insert mode: Press i.
+    - Save: :w.
+    - Exit: :q.
+    - Force exit without saving: :q! .
+    - exit with saving: :wq!.
+-  nano
+  - Features:
+     - User-friendly and Simmple.
+     - Display of shortcuts at the bottom.
+  - Basic Commands:
+     - Ctrl+O: Save file.
+     - Ctrl+X: Exit editor.
+     - Ctrl+k: Cut text.
+     - Ctrl+U: Paste text.
+     
+    
