@@ -135,7 +135,10 @@ Designed as a portable, multi-tasking, and multi-user system.
           ^C
           [root@localhost Desktop]# cat d1
           this is for test purpose.
-11. mkdir : to create a directory we use mkdir command, example.
+
+         important : cat <<EOF>> test.txt (this is basically used when we out of the file after saving content)
+    
+12. mkdir : to create a directory we use mkdir command, example.
             [root@localhost Desktop]# mkdir dir1 dir2 dir3 dir4
             [root@localhost Desktop]# ls
             d1  d2  dir1  dir2  dir3  dir4
@@ -149,8 +152,8 @@ Designed as a portable, multi-tasking, and multi-user system.
            s1/s2/s3:
            s4
            s1/s2/s3/s4:
-12. rmdir : this is only use to remove the files.
-13.    rm : use to remove the files and directory we use rm command.
+13. rmdir : this is only use to remove the files.
+14.    rm : use to remove the files and directory we use rm command.
        example :
             rm : remove file.
          rm -r : recursively removes a directory and its contents.
@@ -160,7 +163,14 @@ Designed as a portable, multi-tasking, and multi-user system.
 15. Redirecion ( > ) : redirect the output to a file or subfile.
 16. pipe ( | ) : pass the output of one command as input of another command.
 17. echo " ", ' ' : the echo command in Linux is used to display a line of text or a variable's value to the terminal.
-
+18. wildcard : *  = any number or characters (incl zero)            ca*         car,ca,carpet
+               ?  = single character                                hel?        help,hell,helw
+               [] = single character from range                     file[0-2]   file0,file1,file2
+                                                                    [hd]ello    hello or dello
+               [!] = single character file not listed in bracket    file[!1]    file2, file3
+               { } = ccomma separated terms                         {*.txt,*.pdf}  hello.txt, doc.txt, source.pdf
+19. cp :
+20. mv :
     
 # Text Editor
 
@@ -194,6 +204,16 @@ Designed as a portable, multi-tasking, and multi-user system.
 
 # Compression Tools
 
+1. bzip2 : bzip2 messages (file name)
+2. gzip  : gzip messages1
+3. zip   : zip messages2.zip messages2  (create new file)
+4. 7za   : 7za a messages3.7z messages3  (compress more compare others) (create new file)
+           7za e messages3.7z
+6. tar   : tar -cvf messages4.tar messages4 
+           tar -xvf messages4.tar
+           tar -czvf messages5.tgz messages5
+           tar -cjvf messages6.tbz messages6
+
 # String Processing
 
 1. Sort : The sort command is used to arrange the lines of a text file or input in a specified order, either alphabetically or numerically, ascending or descending.
@@ -217,3 +237,10 @@ Designed as a portable, multi-tasking, and multi-user system.
     -M : Sort by month names (e.g., "Jan", "Feb", "Mar").
   
     -o : Write the sorted output to a file.
+
+2. head :
+3. tail :
+4. wc (word count) :
+5. cut :
+6. paste :
+7. grep :
