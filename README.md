@@ -244,3 +244,109 @@ Designed as a portable, multi-tasking, and multi-user system.
 5. cut :
 6. paste :
 7. grep :
+
+
+# User Group Management
+
+ A user account in linux is a record that allows an individual or process to log in and access the system with specific permissions and privileges. It erves as an identitiy for users to interact with the system, ensuring security and accountability.
+
+* Key components of a User Account
+
+   Username: A unique identifier for the user on the system (e.g., sachin, admin).
+   
+   User ID (UID): A unique numerical ID assigned to each user. for example:
+   
+       - 0 is reserved for the root user.
+       - UIDs above a certain range are for regular users.
+   Group ID (GID): Specifies the primary group the user belongs to. groups help manage 
+   permissions collectively.
+
+   Home Directory: A personal directory for the user to store files and configuration 
+   settings (e.g., /home/username).
+
+   Shell: The default command-line interpreter for the user (e.g., /bin/bash).
+
+   Password: Stored (usually in an encrypted format) to authenticate the user. It's 
+   often managed in /etc/shadow.
+
+   System Files: 
+
+            /etc/passwd: Contains user account information (excluding passwords).
+            /etc/shadow: Stores encrypted password data.
+
+* Types of User Accounts
+
+    System Accounts: Used by system services and processes (e.g., root, daemon).
+
+    Regular User Accounts: Created for individuals to log in and perform tsaks.
+
+    Service Accounts: Dedicated accounts for applications or services to run with 
+    specific permissions.
+  
+* Importance of User Accounts
+
+     Security: ensures that only authorised individuals or processes access resources.
+
+     Acccountability: Tracks user actions and access logs.
+
+     Customization: Allows personalised settings for each user.
+
+In Linux, managing user accounts involves creating, modifying, and deleting them using commands like useradd, usermod, and userdel, or by directlyediting configuration files with administrative privileges.
+
+* Key Features of a Group
+
+     Group Name: A Unique identifier for the group (e.g., developers, admin).
+
+     Group ID (GID): A Unique numerical identifier assigned to each group.
+
+     Group Members: A list of users who belong to the group. A user can beloong to multiple groups.
+
+     Primary Group: Each user is assigned a primary group when their account is created. Files created by the user are associated with this grouups.
+
+* Types of Groups
+
+     System Groups: Used by system services and processes (e.g., adm,daemon).
+
+     User Groups: Created for users to belong tp specific roles or teams (e.g., dev,marketing).
+
+* Benefits of Using Groups
+
+     Access Control: Allows collective permisssion management for files, directories and resources.
+
+     Simplified Administration: Reduces the complexity of managing permissions for multiple users.
+
+     Collaboration: Faciltates teamwork by providing shared access to resources.
+
+          # cat /etc/login.defs
+          # grep -v "^#" /etc/login.defs | grep -v "^$"
+
+
+# System Files Linux
+
+Passwd File
+
+   * cat /etc/passwd
+
+         [User]    :[x]   :[UID]   :[Comment]                :[Home directory]          :[Default shell]
+         root      :x     :0       :root                     :/root                     :/bin/bash
+         daemon    :x     :2       :daemon                   :/sbin                     :/sbin/nologin
+         sshd      :x     :74      :privilege-sperated SSD   :/usr/share/empty.sshd     :/usr/sbin/nologin
+         apache    :x     :48      :apache                   :/usr/share/httpd          :sbin/nologin
+         armour    :x     :1000    :Armour Infosec           :/home/armour              :/bin/bash
+      
+      1. root        -   The first root is the username.
+      2. x           -   Indicates that the account is protected by a shadowed password
+      3. 0           -   0 is the suer ID for this user.
+      4. 0           -   0 is the group ID for this user.
+      5. root        -   comment about this user.
+      6. /root       -   /root is the home directory for this user.
+      7. /bin/bash   -   And finally /bin/bash is the shell for this user.
+
+
+  Shadow File
+    * cat /etc/shadow
+
+          [User]   :[Encrypted Password]  :[Last pass change]  :[Min pass age]  :[Max pass age]   :[Warning period] :[Inact period]  :[Exp date] :[Unused]
+
+  adcdd
+          
