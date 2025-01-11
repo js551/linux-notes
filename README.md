@@ -325,7 +325,7 @@ In Linux, managing user accounts involves creating, modifying, and deleting them
 
 Passwd File
 
-   * cat /etc/passwd
+   # cat /etc/passwd
 
          [User]    :[x]   :[UID]   :[Comment]                :[Home directory]          :[Default shell]
          root      :x     :0       :root                     :/root                     :/bin/bash
@@ -343,10 +343,67 @@ Passwd File
       7. /bin/bash   -   And finally /bin/bash is the shell for this user.
 
 
-  Shadow File
-    * cat /etc/shadow
+ Shadow File
+   
+   # cat /etc/shadow
+    
 
-          [User]   :[Encrypted Password]  :[Last pass change]  :[Min pass age]  :[Max pass age]   :[Warning period] :[Inact period]  :[Exp date] :[Unused]
+          [User]  :[Encrypted Password]  :[Last pass change]  :[Min pass age]  :[Max pass age]   :[Warning period] :[Inact period]  :[Exp date] :[Unused]
+          root    :$6$ot1LMMm5ih8sJUM4$Q :                    :0               :99999            :7                :                :           : 
+          daemon  :*                     :19760               :0               :99999            :7                :                :           :
+          sshd    :!!                    : 20034              :                :                 :                 :                :           :
+          apache  :!!                    :20063               :                :                 :                 :                :           :
+          armour  :$6$wf/dsYGa7aWhThyi$Y :                    :0               :99999            :7                :                :           :
+  
 
-  adcdd
-          
+ * root        -    Username.
+ * Encrypted  Passsword
+             Encrypted Password - The password is using the $type$salt$shashed format. $typw is the method cryptographic hash algorithm and can have the 
+             follwign values:
+             $1$      -    Unix MD5    
+             $2a$     -    Blowfish
+             $2y$     -    EKsblowfish
+             $5$      -    SHA-256
+             $6$      -    SHA-512
+     
+ * 17110      -    Last password change
+ * 0          -    Minimum password age
+ * 99999      -    Maximum password age
+ * 7          -    Warning period 
+ * ......     -    Inactivity period
+ * ......     -    Expiration date
+ * ......     -    Unused   
+
+ Group File
+
+   # cat /etc/group
+
+         [group]      :[x]    :[GID]     :[Comma-seperated list of username]              
+         root         :x      :0         :                   
+         daemon       :x      :2         :                   
+         sshd         :x      :74        :  
+         apache       :x      :48        :                  
+         armour       :x      :1000      :armour    
+
+   1.  root     -     The firstpart is the name of the group
+   2.  x        -     x is a placeholder for password.
+   3.  0        -     The group ID / gid
+   4.  armour   -     The lat part is a comma-seperated list of username that belong to that group.
+
+Gshadow File
+   
+   # cat /etc/gshadow
+   
+       [group]        :[Encrypted password]    :[group administrators names]     :[group members names]              
+         root         :                        :                                 :                   
+         daemon       :                        :                                 :                   
+         sshd         :!                       :                                 :  
+         apache       :!                       :                                 :                  
+         armour       :!                       :                                 :   
+
+  1.  root   -   Group Name
+  2.  !!     -   Contains the encrypted group password of the text password which was specified using gpasswd command.
+                 if the file  /etc/gshadow is deleted, then this encryped password is moved to second field of  /etc/group.
+                 if no passworf is given to group, then a '!' is displayed in the file.
+  3.  contains list of the group administrators names. By default it is blank i.e. only user having same name as,group name is first group adminstrator.
+  4.  armour  -   contains list of group members names. Blank by default.       
